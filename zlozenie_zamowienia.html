@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+    <meta name="language" content="pl-PL">
+    <meta charset="utf-8">
+    <meta name = "author" content = "Yelyzaveta Shershenetska">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="icon" href="images/logo3.png">
+    <title>bezCUKIERnia</title>
+    <script>
+        var cart = [];
+        var total = 0;
+        var discountConditions = {
+            promotions: [
+        {
+            products: ['Muffin wiśniowa rozkosz', 'Jagodowa ekspozycja', 'Muffin Malinowy'],
+            discountAmount: 7,
+        },
+        {
+            products: ['Sernik z orzechami', 'Sernik królewski', 'Sernik z mango', 'Sernik Truskawkowy' ],
+            discountAmount: 53,
+        },
+        {
+            products: ['Wegański torcik', 'Kinder Maxi', 'Owocowa Beza'],
+            discountAmount: 95,
+        },
+        
+    ]
+        };
+
+        function addToCart(productName, price) {
+            var existingItem = cart.find(item => item.name === productName);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name: productName, price: price, quantity: 1 });
+            }
+
+            updateCart();
+        }
+
+        function incrementQuantity(productName) {
+            var existingItem = cart.find(item => item.name === productName);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            }
+
+            updateCart();
+        }
+
+        function decrementQuantity(productName) {
+            var existingItem = cart.find(item => item.name === productName);
+
+            if (existingItem && existingItem.quantity > 1) {
+                existingItem.quantity -= 1;
+            } else if (existingItem && existingItem.quantity === 1) {
+                removeFromCart(productName);
+            }
+
+            updateCart();
+        }
+
+        function removeFromCart(productName) {
+            var existingItemIndex = cart.findIndex(item => item.name === productName);
+
+            if (existingItemIndex !== -1) {
+                cart.splice(existingItemIndex, 1);
+            }
+
+            updateCart();
+        }
+
+        function updateCart() {
+    var totalDiscount = 0;
+    var cartContent = document.getElementById('cartContent');
+    var totalElement = document.getElementById('total');
+    var cartItemsContainer = document.getElementById('cartItems');
+    var emptyCartMessage = document.getElementById('empty-cart-message');
+    
+
+    if (cart.length > 0) {
+        var cartItems = cart.map(item =>
+            `<div class="product">
+                <div class="product-info">
+                    <p>${item.name} x${item.quantity} - ${item.price * item.quantity}zł</p>
+                </div>
+                <div class="product-controls">
+                    <button class="button is-light is-medium" onclick="incrementQuantity('${item.name}')">+</button>
+                    <button class="button is-light is-medium" onclick="decrementQuantity('${item.name}')">-</button>
+                    <button id="usun" class="button is-medium" onclick="removeFromCart('${item.name}')">Usuń</button>
+                </div>
+            </div>`
+        ).join('');
+
+        cartItemsContainer.innerHTML = cartItems;
+
+        total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        totalElement.innerHTML = `<span style="font-size: larger;">Suma: ${total}zł</span>`;
+
+        
+        emptyCartMessage.style.display = 'none';
+    } else {
+        cartContent.textContent = ''; 
+        totalElement.textContent = 'Suma: 0zł';
+        cartItemsContainer.innerHTML = ''; 
+
+        
+        emptyCartMessage.style.display = 'block';
+    }
+    if (cart.length === 0) {
+        total = 0;
+    } else {
+        var totalDiscount = 0;
+
+        discountConditions.promotions.forEach(promotion => {
+            var hasPromoProducts = promotion.products.every(product =>
+                cart.some(item => item.name === product)
+            );
+
+            if (hasPromoProducts) {
+                totalDiscount += promotion.discountAmount;
+            }
+        });
+
+        total -= totalDiscount;
+    }
+
+    totalElement.innerHTML = `<span style="font-size: larger;">Suma: ${total}zł</span>`;
+
+    if (totalDiscount > 0) {
+        totalElement.innerHTML += `<br><span style="color: red;">Rabat: ${totalDiscount} zł</span>`;
+    }
+}
+
+        function checkout() {
+            if (cart.length > 0) {
+                alert("Dziękujemy bardzo za zamówienie!"); }
+            else {
+                alert("Koszyk jest pusty, nie możemy złożyć zamówienie!")
+            }
+
+            cart = [];
+            updateCart();
+        }
+        
+    </script>
+    <style>
+    .navbar-item:hover {
+        background-color:rgb(181, 83, 83) !important; 
+    }
+
+    .navbar-item:not(:first-child) {
+        margin-left: 35px;
+    }
+
+    .social-icons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+    .social-icons img {
+        width: 30px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .title-container {
+        text-align: center;
+        display: inline-block;
+        border: 3px solid #864447;
+        border-radius: 7px;
+        background: linear-gradient(to right, #f1e8da, #c4b399);
+        color: transparent;
+        position: relative;
+        overflow: hidden;
+        margin-top: 0,5rem;
+    }
+
+    .title-container .title,
+    .title-container .subtitle {
+        margin: 0;
+        display: inline-block;
+    }
+
+    .title-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: -1;
+        animation: fadeIn 2s ease-in-out infinite alternate;
+    }
+    #shop-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px;
+        }
+
+        #shop {
+            width: 60%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .add-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        #cart {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cart p {
+            margin: 0;
+        }
+
+        #total {
+            font-weight: bold;
+        }
+
+        #checkout {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+        #zloz {
+            color:white;
+            background-color:#165f1d;
+        }
+        #usun {
+            background-color:#6b2c2f;
+            color:white;
+        }
+    </style>
+    </head>
+    <body class="has-text-centered" style=" background-color:rgb(245, 236, 234);">
+        <section class="hero custom-background" style="height: 140px; background-color:#6b2c2f;" >
+            <div class="hero-body" style=" padding: 1rem 0; position: relative;">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <a href="index.html" id="logo-link">
+                            <img id="logo-img" src="images/logo3.png" width="100" alt="bezCUKIERnia logo"/>
+                            </a>
+                            <script>
+                                var logoLink = document.getElementById('logo-link');
+                                var logoImg = document.getElementById('logo-img');
+                                
+                                logoLink.addEventListener('mouseenter', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1.2)';
+                                });
+                                logoLink.addEventListener('mouseleave', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1)';
+                                });
+                            </script>
+                        </div>
+                        <div class="column is-three-quarters has-text-right">
+                            <nav class="navbar" role="navigation">
+                                <div class="navbar-menu is-flex custom-background">
+                                    <div class="navbar-start">
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="index.html">Strona główna</a>
+                                        <a class="navbar-item has-text-white"  style="font-family: cursive;" href="o_nas.html">O nas</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="wypieki.html">Wypieki</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="oferty.html">Oferty promocyjne</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="kontakt.html">Kontakt</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bezcukiernia_sz">
+                        <img src="images/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img src="images/facebook.png" alt="Facebook" />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div id="shop-container">
+            <div id="shop">
+                <div class="product">
+                    <p>Owocowa Beza - 95zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Owocowa Beza', 95)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Sernik Truskawkowy - 87zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Sernik Truskawkowy', 87)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Sernik z mango - 99zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Sernik z mango', 99)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Wegański torcik - 107zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Wegański torcik', 107)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Kinder Maxi - 119zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Kinder Maxi', 119)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Torcik w wiśnią - 110zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Torcik w wiśnią', 110)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Sernik królewski - 84zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Sernik królewski', 84)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Sernik z orzechami - 103zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Sernik z orzechami', 103)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Muffin wiśniowa rozkosz - 10zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Muffin wiśniowa rozkosz', 10)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Muffin Malinowy - 8zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Muffin Malinowy', 8)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Jagodowa ekspozycja - 9zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Jagodowa ekspozycja', 9)">Dodaj</button>
+                </div>
+                <div class="product">
+                    <p>Czekoladowe marzenie - 8zł</p>
+                    <button class="button is-light is-medium add-button" onclick="addToCart('Czekoladowe marzenie', 8)">Dodaj</button>
+                </div>
+            </div>
+    
+            <div id="cart">
+                <p id="cartContent"></p>
+                <p id="empty-cart-message" class="has-text-danger">Koszyk jest pusty</p>
+                <p id="total">Suma: 0zł</p>
+                <div class="has-text-centered" style="margin-top: 20px;">
+                    <button id="zloz" class="button is-medium" onclick="checkout()">Zamów</button>
+                    
+                </div>
+                <div id="cartItems" class="cart-items-container"></div>
+            </div>
+        </div>
+    <footer>
+        <div class="has-text-centered">
+            <p>
+                &copy; 2024 Shershenetska Yelyzaveta, Dvizhona Volodymyr. Wszelkie prawa zastrzeżone  
+            </p>
+        </div>
+    </footer>
+    </body>
+    </html>

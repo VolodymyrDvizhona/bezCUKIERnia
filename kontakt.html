@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+    <meta name="language" content="pl-PL">
+    <meta charset="utf-8">
+    <meta name = "author" content = "Yelyzaveta Shershenetska">
+    <link rel="stylesheet" href="arkusz.css" type="text/css"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="icon" href="images/logo3.png">
+    <title>Kontakt</title>
+    <style>
+    .navbar-item:hover {
+        background-color:rgb(181, 83, 83) !important; 
+    }
+
+    .navbar-item:not(:first-child) {
+        margin-left: 35px;
+    }
+
+    .social-icons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+    .social-icons img {
+        width: 30px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    fieldset {
+        border: 2px solid rgba(107, 44, 47, 0.5); 
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #6b2c2f;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    </style>
+    </head>
+    <body style=" background-color:rgb(245, 236, 234);">
+        <section class="hero custom-background has-text-centered" style="height: 140px; background-color:#6b2c2f;">
+            <div class="hero-body" style="padding: 1rem 0; position: relative;">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <a href="index.html" id="logo-link">
+                            <img id="logo-img" src="images/logo3.png" width="100" alt="bezCUKIERnia logo"/>
+                            </a>
+                            <script>
+                                var logoLink = document.getElementById('logo-link');
+                                var logoImg = document.getElementById('logo-img');
+                                
+                                logoLink.addEventListener('mouseenter', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1.2)';
+                                });
+                                logoLink.addEventListener('mouseleave', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1)';
+                                });
+                            </script>
+                        </div>
+                        <div class="column is-three-quarters has-text-right">
+                            <nav class="navbar" role="navigation">
+                                <div class="navbar-menu is-flex custom-background">
+                                    <div class="navbar-start">
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="index.html">Strona główna</a>
+                                        <a class="navbar-item has-text-white"  style="font-family: cursive;" href="o_nas.html">O nas</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="wypieki.html">Wypieki</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="oferty.html">Oferty promocyjne</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="kontakt.html">Kontakt</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bezcukiernia_sz">
+                        <img src="images/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img src="images/facebook.png" alt="Facebook" />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-half" style="padding-left: 50px;">
+                        <div class="title-container has-text-left" style="padding-bottom: 10px; padding-top:70px;">
+                            <p class="is-size-4"><strong>Skontaktuj się z nami</strong></p>
+                        </div>
+                        <div class="subtitle has-text-left" style="padding-top:20px">
+                            <p class="is-size-6"><strong>Adres:</strong> ul. Kordeckiego 123, Szczecin</p>
+                            <p class="is-size-6"><strong>Telefon:</strong> +48 733 337 737</p>
+                            <p class="is-size-6"><strong>E-mail</strong> bezcukiernia@gmail.com</p>
+                            <p class="is-size-6"><strong>Godziny otwarcia</strong> Pon - Sb: 08:00-18:00</p>    
+                        </div>
+                        <div style="padding-top:10px;">
+                            <form action="mailto:238514@stud.usz.edu.pl" method="post" autocomplete="off">
+                                <fieldset>
+                                    <legend>Zostaw swoją wiadomość</legend>
+                                    <label class="has-text-left"><strong>Imię i Nazwisko</strong>
+                                        <input type="text" name="imie_nazwisko" placeholder="Wpisz swoje Imię i Nazwisko" pattern="[A-Za-z]+" title="Tylko litery są dozwolone">
+                                    </label>
+                                    <label class="has-text-left"><strong>E-mail</strong>
+                                        <input type="text" name="email" placeholder="Wpisz swoją pocztę">
+                                    </label>
+                                    <label class="has-text-left"><strong>Wiadomość</strong>
+                                        <textarea name="wiadomosc" placeholder="Napisz..."></textarea>
+                                    </label>
+                                </fieldset>
+                                <button type="submit">Wyślij</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column" style="padding:70px; padding-top:125px; color: #9d4045;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2377.5149410105564!2d14.532608295827067!3d53.42350054975351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47aa09ad18ecf1d9%3A0x7c67df009bc9cacd!2sBezcukiernia!5e0!3m2!1spl!2spl!4v1706106392645!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="has-text-centered" style="padding-top:140px;">
+                <p>
+                    &copy; 2024 Shershenetska Yelyzaveta, Dvizhona Volodymyr. Wszelkie prawa zastrzeżone 
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
+    
+
+    
+
+    

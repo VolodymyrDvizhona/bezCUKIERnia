@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+    <meta name="language" content="pl-PL">
+    <meta charset="utf-8">
+    <meta name = "author" content = "Yelyzaveta Shershenetska"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="icon" href="images/logo3.png">
+    <title>O nas</title>
+    <style>
+    .custom-background {
+        background-color:#6b2c2f;
+    }
+
+    .navbar-item:hover {
+        background-color:rgb(181, 83, 83) !important; 
+    }
+
+    .navbar-item:not(:first-child) {
+        margin-left: 35px;
+    }
+    
+    .social-icons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+    .social-icons img {
+        width: 30px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .double-line {
+        border-top: 1px solid #6b2c2f;
+        border-bottom: 1px solid #6b2c2f;
+        margin: 40px 0;
+        height: 3px; 
+    }
+    .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.2);
+        }
+
+    </style>
+    </head>
+    <body class="has-text-centered" style="background-color:rgb(245, 236, 234);">
+        <section class="hero custom-background" style="height: 140px;">
+            <div class="hero-body" style="  padding: 1rem 0; position: relative;">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <a href="index.html" id="logo-link">
+                                <img id="logo-img" src="images/logo3.png" width="100" alt="bezCUKIERnia logo"/>
+                            </a>
+                            <script>
+                                var logoLink = document.getElementById('logo-link');
+                                var logoImg = document.getElementById('logo-img');
+                                
+                                logoLink.addEventListener('mouseenter', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1.2)';
+                                });
+                                logoLink.addEventListener('mouseleave', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1)';
+                                });
+                            </script>
+                        </div>
+                        <div class="column is-three-quarters has-text-right">
+                            <nav class="navbar" role="navigation">
+                                <div class="navbar-menu is-flex custom-background">
+                                    <div class="navbar-start">
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="index.html">Strona główna</a>
+                                        <a class="navbar-item has-text-white"  style="font-family: cursive;" href="o_nas.html">O nas</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="wypieki.html">Wypieki</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="oferty.html">Oferty promocyjne</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="kontakt.html">Kontakt</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bezcukiernia_sz">
+                        <img src="images/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img src="images/facebook.png" alt="Facebook" />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-half">
+                        <div class="title-container" style="padding-left: 50px;">
+                            <div class="title has-text-centered" style="font-family: cursive;">
+                                <p class="is-size-3">Historia Cukierni</p>
+                            </div>
+                            <div class="subtitle has-text-centered" style=" padding-top: 15px; width: 510px;">
+                                <p class="is-size-5">W sercu urokliwego Szczecina, 17 grudnia 2023 roku, narodziła się oaza smaków dla wszystkich, którzy szukają przyjemności bez nadmiaru cukru. Inspiracją do stworzenia tego wyjątkowego miejsca była troska o zdrowie i chęć dostarczenia radości każdemu, niezależnie od preferencji smakowych czy ograniczeń zdrowotnych.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="image-container" style="width: 450px; padding-left: 50px; overflow: hidden; border-radius: 25px;">
+                            <img src="images/cuk1.png" alt="nasze zdjęcie2" style="width: 100%; height: auto; border-radius: 25px;"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-vcentered" style="padding-top: 30px;">
+                    <div class="column is-half">
+                        <div class="image-container" style="width: 450px; padding-left: 50px; overflow: hidden; border-radius: 25px;">
+                            <img src="images/cuk2.jpg" alt="nasze zdjęcie2" style="width: 100%; height: auto; border-radius: 25px;"/>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="title-container" style="padding-right: 50px;">
+                            <div class="title has-text-centered" style="font-family: cursive;">
+                                <p class="is-size-3">Dla kogo my jesteśmy?</p>
+                            </div>
+                            <div class="subtitle has-text-centered" style="padding-top: 15px; width: 530px;">
+                                <p class="is-size-5">Otworzyliśmy nasze drzwi dla tych, którzy pragną delektować się słodkościami bez wyrzutów sumienia. 
+                                    Nasze wyjątkowe <a href="wypieki.html" style="color: #6b2c2f"><b>muffinki, torty oraz serniki</b></a> to nie tylko pyszności, ale także hołd dla zdrowego stylu życia. 
+                                    Każdy kęs to nie tylko przyjemność dla podniebienia, ale także dowód, że zdrowie może być równie smaczne.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="section" style="background-color: #6B2C2F; color: #F1E8DA;">
+            <div class="container">
+                <div class="title has-text-centered" style="font-family: cursive; color: #e3dad1;">
+                    <p class="is-size-4">Zdrowe Zamienniki</p>
+                </div>
+                <div class="subtitle has-text-centered" style=" width: 490px; margin: 0 auto; color: #e3dad1;">
+                    <p class="is-size-7">W bezCUKIERnia skupiamy się na dostarczaniu smaków pełnych radości, jednocześnie dbając o Twoje zdrowie.
+                        Oto kilka głównych składników, których używamy jako zamienniki, aby nasze desery były smaczne i przyjazne dla Twojego ciała:</p>
+                </div>
+                <div class="table-container" style="margin: 0 auto; overflow: hidden; border-radius: 25px; padding: 30px; width: 700px;">
+                    <table class="table is-size-7 is-fullwidth custom-background has-text-centered"  style="color: #e3dad1; ">
+                        <tbody>
+                            <tr>
+                                <td><b>Erytrol:</b></td>
+                                <td>Erytrol to naturalny zamiennik cukru o zerowym indeksie glikemicznym. Zapewnia słodki smak bez wpływu na poziom cukru we krwi.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Mąka Migdałowa:</b></td>
+                                <td>Mąka migdałowa, bogata w białko i zdrowe tłuszcze, zastępuje tradycyjną mąkę pszeniczną, przynosząc nutę orzechową do naszych wypieków.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Kokosowy Olej:<b></td>
+                                <td>Zamiast tradycyjnych tłuszczów, używamy kokosowego oleju, który dostarcza zdrowych kwasów tłuszczowych i nadaje deserom delikatny kokosowy aromat.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Kakao Bez Cukru:</b></td>
+                                <td>Dla miłośników czekolady oferujemy kakao bez dodatku cukru, zachowujące intensywny smak bez zbędnego dodatku słodyczy.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Owoce Sezonowe:</b></td>
+                                <td>Dodajemy świeże owoce sezonowe, aby dostarczyć naturalnej słodyczy i witamin. To doskonały sposób na wzbogacenie smaku bez dodatku cukru.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Naturalne Przyprawy:</b></td>
+                                <td>Korzystamy z naturalnych przypraw, takich jak wanilia, cynamon i imbir, aby podkreślić smak naszych wypieków bez konieczności dodawania nadmiernej ilości cukru.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="has-text-centered" style="padding-top:60px;">
+                <p>
+                    &copy; 2024 Shershenetska Yelyzaveta, Dvizhona Volodymyr. Wszelkie prawa zastrzeżone 
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+    <meta name="language" content="pl-PL">
+    <meta charset="utf-8">
+    <meta name = "author" content = "Yelyzaveta Shershenetska">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="icon" href="images/logo3.png">
+    <title>bezCUKIERnia</title>
+    <style>
+    .navbar-item:hover {
+        background-color:rgb(181, 83, 83) !important; 
+    }
+
+    .navbar-item:not(:first-child) {
+        margin-left: 35px;
+    }
+
+    .social-icons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+    .social-icons img {
+        width: 30px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .title-container {
+        text-align: center;
+        display: inline-block;
+        border: 3px solid #864447;
+        border-radius: 7px;
+        background: linear-gradient(to right, #f1e8da, #c4b399);
+        color: transparent;
+        position: relative;
+        overflow: hidden;
+        margin-top: 0,5rem;
+    }
+
+    .title-container .title,
+    .title-container .subtitle {
+        margin: 0;
+        display: inline-block;
+    }
+
+    .title-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: -1;
+        animation: fadeIn 2s ease-in-out infinite alternate;
+    }
+
+    </style>
+    </head>
+    <body class="has-text-centered" style=" background-color:rgb(245, 236, 234);">
+        <section class="hero custom-background" style="height: 140px; background-color:#6b2c2f;" >
+            <div class="hero-body" style=" padding: 1rem 0; position: relative;">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <a href="index.html" id="logo-link">
+                            <img id="logo-img"src="images/logo3.png" width="100" alt="bezCUKIERnia logo"/>
+                            </a>
+                            <script>
+                                var logoLink = document.getElementById('logo-link');
+                                var logoImg = document.getElementById('logo-img');
+                                
+                                logoLink.addEventListener('mouseenter', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1.2)';
+                                });
+                                logoLink.addEventListener('mouseleave', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1)';
+                                });
+                            </script>
+                        </div>
+                        <div class="column is-three-quarters has-text-right">
+                            <nav class="navbar" role="navigation">
+                                <div class="navbar-menu is-flex custom-background">
+                                    <div class="navbar-start">
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="index.html">Strona główna</a>
+                                        <a class="navbar-item has-text-white"  style="font-family: cursive;" href="o_nas.html">O nas</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="wypieki.html">Wypieki</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="oferty.html">Oferty promocyjne</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="kontakt.html">Kontakt</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bezcukiernia_sz">
+                        <img src="images/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img src="images/facebook.png" alt="Facebook" />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="title-container" style="padding: 20px;">
+                <div class="title has-text-centered" style="font-family: cursive;">
+                    <p class="is-size-3">100% ZDROWE. BEZ CUKRU. ​<br>BEZ GLUTENU. BEZ LAKTOZY.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="image-container" style="text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
+                    <img src="images/deser11.png" width="1100" alt="nasze zdjęcie"/>
+                </div>  
+            </div>
+            <div class="has-text-centered" style="font-family: cursive;">
+                <a class="button custom-button" href="o_nas.html" style=" background-color: rgb(187, 147, 111); color: #ffffff; ">DOWIEDZ SIĘ WIĘCEJ O NAS</a>
+            </div>
+        </section>
+        <footer>
+            <div class="has-text-centered" style="padding-top:40px;">
+                <p>
+                    &copy; 2024 Shershenetska Yelyzaveta, Dvizhona Volodymyr. Wszelkie prawa zastrzeżone 
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

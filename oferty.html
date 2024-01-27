@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+    <meta name="language" content="pl-PL">
+    <meta charset="utf-8">
+    <meta name = "author" content = "Yelyzaveta Shershenetska"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" href="images/logo3.png">
+    <title>Promocje</title>
+    <style>
+    .navbar-item:hover {
+        background-color:rgb(181, 83, 83) !important; 
+    }
+
+    .navbar-item:not(:first-child) {
+        margin-left: 35px;
+    }
+
+    .social-icons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+    .social-icons img {
+        width: 30px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .offer {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 10px;
+        text-align: left;
+        height: 100%; 
+    }
+
+    .offer h2 {
+        color: #6b2c2f;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        font-family: cursive;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .offer ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .offer li {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .price {
+        color: #6b2c2f;
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+
+    .animate__animated {
+        animation-duration: 2s; 
+    }
+    
+    .animate__delay-1s {
+        animation-delay: 2s;
+    }
+
+    .animate__delay-2s {
+        animation-delay: 3s;
+    }
+    
+    </style>
+    </head>
+    <body class="has-text-centered" style="background-color:rgb(245, 236, 234);">
+        <section class="hero custom-background" style="height: 140px; background-color:#6b2c2f;">
+            <div class="hero-body" style="padding: 1rem 0; position: relative;">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <a href="index.html" id="logo-link">
+                            <img id="logo-img" src="images/logo3.png" width="100" alt="bezCUKIERnia logo"/>
+                            </a>
+                            <script>
+                                var logoLink = document.getElementById('logo-link');
+                                var logoImg = document.getElementById('logo-img');
+                                
+                                logoLink.addEventListener('mouseenter', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1.2)';
+                                });
+                                logoLink.addEventListener('mouseleave', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1)';
+                                });
+                            </script>
+                        </div>
+                        <div class="column is-three-quarters has-text-right">
+                            <nav class="navbar" role="navigation">
+                                <div class="navbar-menu is-flex custom-background">
+                                    <div class="navbar-start">
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="index.html">Strona główna</a>
+                                        <a class="navbar-item has-text-white"  style="font-family: cursive;" href="o_nas.html">O nas</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="wypieki.html">Wypieki</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="oferty.html">Oferty promocyjne</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="kontakt.html">Kontakt</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bezcukiernia_sz">
+                        <img src="images/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img src="images/facebook.png" alt="Facebook" />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-multiline" style="padding-top:97px;">
+                    <div class="column is-full">
+                        <p class="has-text-centered" style="font-size: 1.5rem; font-family: cursive; margin-bottom: 20px; color:#6b2c2f;">Kup taniej!</p>
+                    </div>
+                    <div class="column is-one-third animate__animated animate__fadeInUp">
+                        <div class="offer">
+                            <h2>Trójpak Jagodowy</h2>
+                            <ul>
+                                <li>Muffin wiśniowa rozkosz</li>
+                                <li>Muffin malinowy</li>
+                                <li>Muffin jagodowa eksplozja</li>
+                            </ul>
+                            <p class="price"><strong>Cena promocyjna:</strong> 20 zł <span style="font-size: 0.9em;"><del>27 zł</del></span></p>
+                        </div>
+                    </div>
+                    <div class="column is-one-third animate__animated animate__fadeInUp">
+                        <div class="offer">
+                            <h2>Sernikowy Wybuch</h2>
+                            <ul>
+                                <li>Sernik królewski</li>
+                                <li>Sernik z mango</li>
+                                <li>Sernik truskawkowy</li>
+                                <li>Sernik z orzechami</li>
+                            </ul>
+                            <p class="price"><strong>Cena promocyjna:</strong> 320 zł <span style="font-size: 0.9em;"><del>373 zł</del></span></p> 
+                        </div>
+                    </div>
+                    <div class="column is-one-third animate__animated animate__fadeInUp">
+                        <div class="offer">
+                            <h2>Dwa torciki - to jak trzy</h2>
+                            <ul>
+                                <li>Wegański torcik</li>
+                                <li>Kinder Maxi</li>
+                                <li>+ Torcik: Owocowa Beza GRATIS!</li>
+                            </ul>
+                            <p class="price"><strong>Cena promocyjna:</strong> 226 zł <span style="font-size: 0.9em;"><del>321 zł</del></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section has-text-centered animate__animated animate__fadeInUp" style="padding-bottom: 10px;">
+                <a href="zlozenie_zamowienia.html" class="button is-primary is-large is-rounded" style="background-color: #6B2C2F;">Przejdź do koszyka</a>
+            </div>
+        </section>
+        <footer>
+            <div class="has-text-centered" style="padding-top:180px;">
+                <p>
+                    &copy; 2024 Shershenetska Yelyzaveta, Dvizhona Volodymyr. Wszelkie prawa zastrzeżone 
+            </div>
+        </footer>
+    </body>
+</html>

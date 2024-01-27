@@ -1,0 +1,152 @@
+<html lang="pl-PL">
+<head>
+    <meta name="language" content="pl-PL">
+    <meta charset="utf-8">
+    <meta name="author" content="Yelyzaveta Shershenetska">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="icon" href="images/logo3.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Katalog</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+    $(document).ready(function(){
+                $('.carousel').slick({
+                    infinite: true,
+                    slidesToShow: 3, 
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1400, 
+                });
+                $('.carousel img').hover(function() {
+            $(this).css('transform', 'scale(1.1)');
+            $(this).css('transition', 'transform 0.3s ease');
+        }, function() {
+            $(this).css('transform', 'scale(1)');
+            $(this).css('transition', 'transform 0.3s ease');
+        });
+            });
+    </script>
+    <style>
+    .navbar-item:hover {
+        background-color:rgb(181, 83, 83) !important; 
+    }
+
+    .navbar-item:not(:first-child) {
+        margin-left: 35px;
+    }
+
+    .social-icons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+    .social-icons img {
+        width: 30px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .wypiek:hover {
+        border-bottom: 2px solid #6B2C2F;
+        transition: border-bottom 0.45s ease;
+    }
+    #zamow {
+        background-color:#69292d;
+        color:white;
+        padding: 12px 12px 12px 12px;
+    }
+    .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+.carousel img {
+        border-radius: 15px;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .carousel img:hover {
+        transform: scale(1.2);
+    }
+   
+    </style>
+    </head>
+    <body class="has-text-centered" style="background-color:rgb(245, 236, 234);">
+        <section class="hero custom-background" style="height: 140px; background-color:#6b2c2f;">
+            <div class="hero-body" style="padding: 1rem 0; position: relative;">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <a href="index.html" id="logo-link">
+                                <img id="logo-img" src="images/logo3.png" width="100" alt="bezCUKIERnia logo"/>
+                            </a>
+                            <script>
+                                var logoLink = document.getElementById('logo-link');
+                                var logoImg = document.getElementById('logo-img');
+                                
+                                logoLink.addEventListener('mouseenter', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1.2)';
+                                });
+                                logoLink.addEventListener('mouseleave', function() {
+                                    logoImg.style.transition = 'transform 0.5s ease';
+                                    logoImg.style.transform = 'scale(1)';
+                                });
+                            </script>
+                        </div>
+                        <div class="column is-three-quarters has-text-right">
+                            <nav class="navbar" role="navigation">
+                                <div class="navbar-menu is-flex custom-background">
+                                    <div class="navbar-start">
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="index.html">Strona główna</a>
+                                        <a class="navbar-item has-text-white"  style="font-family: cursive;" href="o_nas.html">O nas</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="wypieki.html">Wypieki</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="oferty.html">Oferty promocyjne</a>
+                                        <a class="navbar-item has-text-white" style="font-family: cursive;" href="kontakt.html">Kontakt</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bezcukiernia_sz">
+                        <img src="images/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <img src="images/facebook.png" alt="Facebook" />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="section has-text-centered" style="padding-bottom: 10px;">
+            <a href="zlozenie_zamowienia.html" class="button is-primary is-large is-rounded" style="background-color: #6B2C2F;">Złożyć zamówienie</a>
+        </div>
+        <section id="wypieki" class="section">
+            <div class="container">
+                <div class="carousel">
+                    <div><img src="images/2.png" alt="Katalog 1"></div>
+                    <div><img src="images/1.jpg" alt="Katalog 2"></div>
+                    <div><img src="images/3.png" alt="Katalog 3"></div>
+                    <div><img src="images/4.png" alt="Katalog 4"></div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="has-text-centered">
+                <p>
+                    &copy; 2024 Shershenetska Yelyzaveta, Dvizhona Volodymyr. Wszelkie prawa zastrzeżone 
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
